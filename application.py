@@ -18,7 +18,7 @@ from flask_swagger_ui import get_swaggerui_blueprint
 application = Flask(__name__)
 app = application
 app.config["PROPAGATE_EXCEPTIONS"] = True
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app)
 api = Api(app, prefix=prefix, catch_all_404s=True)
 
 # ============================================
