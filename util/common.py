@@ -34,7 +34,7 @@ prefix = ENVIRONMENT().get_instance().getPrefix()
 
 def build_swagger_config_json():
 
-    config_file_path = "static/swagger/config.json"
+    config_file_path = "static/swagger/config.edit.json"
 
     with open(config_file_path, "r", encoding="utf-8") as file:
         config_data = json.load(file)
@@ -46,5 +46,5 @@ def build_swagger_config_json():
 
     new_config_file_path = "static/swagger/config.json"
 
-    with open(new_config_file_path, "w", encoding="gbk") as new_file:
+    with open(new_config_file_path, "w") as new_file:
         json.dump(config_data, new_file, indent=2)
