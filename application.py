@@ -3,13 +3,7 @@ from flask_restful import Api, MethodNotAllowed, NotFound
 from flask_cors import CORS
 from util.common import domain, port, prefix, build_swagger_config_json
 from resources.swaggerConfig import SwaggerConfig
-from resources.bookResource import (
-    BooksGETResource,
-    BookGETResource,
-    BookPOSTResource,
-    BookPUTResource,
-    BookDELETEResource,
-)
+
 from flask_swagger_ui import get_swaggerui_blueprint
 
 # ============================================
@@ -18,7 +12,7 @@ from flask_swagger_ui import get_swaggerui_blueprint
 application = Flask(__name__)
 app = application
 app.config["PROPAGATE_EXCEPTIONS"] = True
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 api = Api(app, prefix=prefix, catch_all_404s=True)
 
 # ============================================
