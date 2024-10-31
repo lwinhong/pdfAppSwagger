@@ -39,10 +39,10 @@ def build_swagger_config_json():
     with open(config_file_path, "r", encoding="utf-8") as file:
         config_data = json.load(file)
 
-    config_data["servers"] = [
-        {"url": f"http://localhost:{port}{prefix}"},
-        {"url": f"http://{domain}:{port}{prefix}"},
-    ]
+    # config_data["servers"] = [
+    #     {"url": f"http://localhost:{port}{prefix}"},
+    #     {"url": f"http://{domain}:{port}{prefix}"},
+    # ]
 
     new_config_file_path = "static/swagger/config.json"
 

@@ -66,15 +66,6 @@ def redirect_to_prefix():
 # ============================================
 # GET swagger config
 api.add_resource(SwaggerConfig, "/swagger-config")
-# GET books
-api.add_resource(BooksGETResource, "/books")
-api.add_resource(BookGETResource, "/books/<int:id>")
-# POST book
-api.add_resource(BookPOSTResource, "/books")
-# PUT book
-api.add_resource(BookPUTResource, "/books/<int:id>")
-# DELETE book
-api.add_resource(BookDELETEResource, "/books/<int:id>")
 
 
 if __name__ == "__main__":
